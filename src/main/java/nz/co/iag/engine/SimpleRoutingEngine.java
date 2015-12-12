@@ -1,11 +1,10 @@
 package nz.co.iag.engine;
 
-import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by si556244 on 19/11/2015.
@@ -22,19 +21,14 @@ public class SimpleRoutingEngine implements IRoutingEngine {
     public Endpoint selectEndpoint(String soapAction, String payload, boolean isStrict) {
         Collection<Route> routes = routesRegister.getRoutes();
         Preconditions.checkState(routes.size()>1);
-        List<Endpoint> candidateEndpoints = Lists.newArrayList();
-        for(IRoute route : routes){
-            Optional<Endpoint> endpointOptional = route.isSatisfiedBy(soapAction, payload);
-            if(endpointOptional.isPresent()){
-                candidateEndpoints.add(endpointOptional.get());
-                if(isStrict && candidateEndpoints.size()>1){
-                    throw new TooManyMatchingRoutesException();
-                }
-            }
+        final List<Route> matchingRoutes = routes.stream().filter(candidateRoute ->
+                candidateRoute.isSatisfiedBy(soapAction, payload)).collect(Collectors.toList());
+        if(isStrict && matchingRoutes.size() > 1){
+            throw new TooManyMatchingRoutesException();
         }
-        if(candidateEndpoints.isEmpty()){
+        else if(matchingRoutes.isEmpty()){
             throw new NoMatchingRoutesFoundException();
         }
-        return candidateEndpoints.get(0);
+        return matchingRoutes.get(0).getEndpoint();
     }
 }

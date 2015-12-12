@@ -1,15 +1,9 @@
-package nz.co.iag.example;
-
-import nz.co.iag.engine.Endpoint;
-import nz.co.iag.engine.IRoutingEngine;
-import nz.co.iag.engine.SimpleRoutingEngine;
-
-import java.net.MalformedURLException;
+package nz.co.iag.engine;
 
 /**
  * Created by si556244 on 19/11/2015.
  */
-public class CustomerInformationManagementRouter {
+class CustomerInformationManagementRouter {
 
     IRoutingEngine routingEngine;
 

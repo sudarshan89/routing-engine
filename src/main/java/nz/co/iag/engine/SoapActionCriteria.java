@@ -1,6 +1,7 @@
 package nz.co.iag.engine;
 
-import com.google.common.base.Predicate;
+
+import java.util.function.Predicate;
 
 /**
  * Created by si556244 on 19/11/2015.
@@ -13,7 +14,7 @@ public class SoapActionCriteria implements Predicate<RequestHolder> {
         this.soapAction = soapAction;
     }
 
-    @Override public boolean apply(RequestHolder requestHolder) {
+    @Override public boolean test(RequestHolder requestHolder) {
         return requestHolder.getSoapAction().equalsIgnoreCase(soapAction);
     }
 }
