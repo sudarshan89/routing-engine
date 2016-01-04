@@ -1,9 +1,7 @@
-package nz.co.iag.engine;
+package nz.co.tenzing.engine;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import static nz.co.iag.engine.Route.newRoute;
 
 /**
  * Created by s.sreenivasan on 11/19/2015.
@@ -34,12 +32,12 @@ class RoutesConfiguration implements IRoutesConfiguration{
          * Create the routes register using the endpoints defined above and the criteria's
          */
         IRoutesRegister routesRegister = RoutesRegister.newRegister()
-                .addRoute(newRoute(huonEndpoint, new SoapActionCriteria("simpleHUONSOAPAction")))
-                .addRoute(newRoute(exigenEndpoint, new SoapActionCriteria("simpleExigenSOAPAction")))
-                .addRoute(newRoute(amigoEndpoint, new SoapActionCriteria("simpleAmigoSOAPAction")))
-                .addRoute(newRoute(amigoEndpoint, new ComplexContentCriteria()))
-                .addRoute(newRoute(amigoEndpoint, new SoapActionCriteria("simpleAmigoSOAPAction").and(new ComplexContentCriteria())))
-                .addRoute(newRoute(secondAmigoEndpoint, new SoapActionCriteria("simpleAmigoSOAPAction").or(new ComplexContentCriteria())));
+                .addRoute(Route.newRoute(huonEndpoint, new SoapActionCriteria("simpleHUONSOAPAction")))
+                .addRoute(Route.newRoute(exigenEndpoint, new SoapActionCriteria("simpleExigenSOAPAction")))
+                .addRoute(Route.newRoute(amigoEndpoint, new SoapActionCriteria("simpleAmigoSOAPAction")))
+                .addRoute(Route.newRoute(amigoEndpoint, new ComplexContentCriteria()))
+                .addRoute(Route.newRoute(amigoEndpoint, new SoapActionCriteria("simpleAmigoSOAPAction").and(new ComplexContentCriteria())))
+                .addRoute(Route.newRoute(secondAmigoEndpoint, new SoapActionCriteria("simpleAmigoSOAPAction").or(new ComplexContentCriteria())));
 
         /**
          * Use the routes register to create a routing engine
