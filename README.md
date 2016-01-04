@@ -17,4 +17,4 @@ and returns the corresponding the endpoint.
 
 Example routes configuration can be found in the tests [here] (https://github.com/sudarshan89/routing-engine/blob/master/src/test/java/nz/co/iag/engine/SimpleRoutingEngineTest.java)
                 
-![Routing Engine in a picture](https://goo.gl/NPJch0 "Routing Engine")                 
+![Routing Engine in a picture](https://dl.dropboxusercontent.com/content_link/XWSwXdTqEMR9KKxMvLeqlcBQZEErR5AQ7tJEbV3qtYJP1KiocBIrdGEQ4dK3amDo/file?raw=true "Routing Engine")                 
