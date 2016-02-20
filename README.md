@@ -1,6 +1,8 @@
-# routing-engine
+# Routing-Engine
 ==
 A opinionated implementation of a [Content-Based-Router] (http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html)
+
+![Badge](https://img.shields.io/shippable/56c8f8431944e60c00e2ae10.svg)
 
 This implementation executes routing criteria and selects a matching endpoint to which the request should be routed.
 
