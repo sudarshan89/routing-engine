@@ -18,6 +18,6 @@ A router register holds multiple routes where each route is composed of an endpo
 When a request is received by the library it uses the routes register to determine the criteria which is satisfies this request
 and returns the corresponding the endpoint.
 
-Example routes configuration can be found in the tests [here] (https://github.com/sudarshan89/routing-engine/blob/master/src/test/java/nz/co/iag/engine/SimpleRoutingEngineTest.java)
+Example routes configuration can be found in the tests [here] (https://github.com/sudarshan89/routing-engine/blob/master/src/test/java/nz/co/tenzing/engine/SimpleRoutingEngineTest.java)
                 
 ![Routing Engine in a picture](https://github.com/sudarshan89/routing-engine/blob/master/images/routing-engine.png?raw=true "Routing Engine")                 
